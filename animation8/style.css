@@ -1,0 +1,55 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.container
+{
+    
+    border: 2px solid red;
+    color: red;
+    font-size: 3em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5em;
+    position: relative;
+    overflow: hidden;
+    transition: color 1s ease ;
+}
+.container::after{
+    content: "";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -96%;
+    width: 150%;
+    height: 198%;
+    border-radius: 50%;
+    background-color: red;
+    transition: transform 1s ease;
+    transform: scaleY(0);
+    transition: transform 1s ease;
+    z-index: -1;
+}
+.container:hover::after
+{
+    transform: scaleY(1);
+}
+.container:hover
+{
+    cursor: pointer;
+    color: black;
+}
